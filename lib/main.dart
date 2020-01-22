@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  print("hello world");
+    runApp(
+      Container(
+        color: Colors.red,
+      ),
+    );
 }
