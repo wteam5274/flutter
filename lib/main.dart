@@ -13,20 +13,23 @@ class _MyStatefulWidgetsState extends State<MyStatefulWidgets> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Text("Col.1",textDirection: TextDirection.ltr,),
-        Text("Col.2",textDirection: TextDirection.ltr,),
-        Text("Col.3",textDirection: TextDirection.ltr,),
-        Row(
-          textDirection: TextDirection.ltr,
-          children: <Widget>[
-            Text("Row 1", textDirection: TextDirection.ltr,),
-            Text("Row 2", textDirection: TextDirection.ltr,),
-            Text("Row 3", textDirection: TextDirection.ltr,),
-          ],
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 40.0,left: 8.0),
+      child: Column(
+        children: <Widget>[
+          Text("Col.1",textDirection: TextDirection.ltr,),
+          Text("Col.2",textDirection: TextDirection.ltr,),
+          Text("Col.3",textDirection: TextDirection.ltr,),
+          Row(
+            textDirection: TextDirection.ltr,
+            children: <Widget>[
+              Text("Row 1", textDirection: TextDirection.ltr,),
+              Text("Row 2", textDirection: TextDirection.ltr,),
+              Text("Row 3", textDirection: TextDirection.ltr,),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
