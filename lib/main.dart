@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'screen2.dart';
+import 'screen3.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MyStatefulWidgets(),
     theme: ThemeData(
       primaryColor: Colors.red,
       accentColor: Colors.lime,
       brightness: Brightness.dark
     ),
+    routes: <String, WidgetBuilder>{
+      "/screen2": (BuildContext context) => Screen2(),
+      "/screen3": (BuildContext context) => Screen3(),
+    },
   ));
 }
 
@@ -23,62 +30,14 @@ class _MyStatefulWidgetsState extends State<MyStatefulWidgets> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Beginner",textDirection: TextDirection.ltr,),
+        title: Text("Routing"),
         actions: <Widget>[
           IconButton(
-            icon: IconButton(icon: Icon(Icons.beenhere), onPressed: () {
-              print("icon beenhere");
+            icon: IconButton(icon: Icon(Icons.arrow_forward), onPressed: () {
+              print("icon arrow_forward");
+              Navigator.pushNamed(context, '/screen2');
             }),
           ),
-          IconButton(
-            icon: IconButton(icon: Icon(Icons.map), onPressed: () {
-              print("icon map");
-            }),
-          )
-        ],
-      ),
-      body: Column(
-        children: <Widget>[
-          TextField(
-            decoration: InputDecoration(
-              icon: Icon(Icons.person),
-              hintText: "Username"
-            ),
-            onChanged: (input) {
-              print("onChanged Username $input");
-            },
-          ),
-          Checkbox(
-            value: checkInput,
-            onChanged: (bool value) {
-              setState(() {
-                print(value);
-                checkInput = value;
-              });
-            },
-          ),
-          ButtonBar(
-            children: <Widget>[
-              Radio(
-                value: 1,
-                groupValue: gender,
-                onChanged: (int value) {
-                  setState(() {
-                    gender = value;
-                  });
-                },
-              ),
-              Radio(
-                value: 2,
-                groupValue: gender,
-                onChanged: (int value) {
-                  setState(() {
-                    gender = value;
-                  });
-                },
-              )
-            ],
-          )
         ],
       ),
     );
