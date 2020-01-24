@@ -17,6 +17,7 @@ class MyStatefulWidgets extends StatefulWidget {
 }
 
 class _MyStatefulWidgetsState extends State<MyStatefulWidgets> {
+  bool checkInput = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +45,15 @@ class _MyStatefulWidgetsState extends State<MyStatefulWidgets> {
             ),
             onChanged: (input) {
               print("onChanged Username $input");
+            },
+          ),
+          Checkbox(
+            value: checkInput,
+            onChanged: (bool value) {
+              setState(() {
+                print(value);
+                checkInput = value;
+              });
             },
           )
         ],
