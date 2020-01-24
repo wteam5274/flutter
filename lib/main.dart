@@ -18,6 +18,7 @@ class MyStatefulWidgets extends StatefulWidget {
 
 class _MyStatefulWidgetsState extends State<MyStatefulWidgets> {
   bool checkInput = false;
+  int gender = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +56,28 @@ class _MyStatefulWidgetsState extends State<MyStatefulWidgets> {
                 checkInput = value;
               });
             },
+          ),
+          ButtonBar(
+            children: <Widget>[
+              Radio(
+                value: 1,
+                groupValue: gender,
+                onChanged: (int value) {
+                  setState(() {
+                    gender = value;
+                  });
+                },
+              ),
+              Radio(
+                value: 2,
+                groupValue: gender,
+                onChanged: (int value) {
+                  setState(() {
+                    gender = value;
+                  });
+                },
+              )
+            ],
           )
         ],
       ),
