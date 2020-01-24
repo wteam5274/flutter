@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: MyStatefulWidgets()
+    home: MyStatefulWidgets(),
+    theme: ThemeData(
+      primaryColor: Colors.red,
+      accentColor: Colors.lime,
+      brightness: Brightness.dark
+    ),
   ));
 }
 
