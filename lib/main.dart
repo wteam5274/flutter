@@ -68,13 +68,8 @@ class _MyStatefulWidgetsState extends State<MyStatefulWidgets> {
             itemCount: list.length,
             itemBuilder: (BuildContext context, int index) {
               return Dismissible(
-                key: Key(list[index]),
+                key: Key(index.toString()),
                 child: ListTile(title: Text(list[index])),
-                onDismissed: (direction){
-                  setState(() {
-                    list.removeAt(index);
-                  });
-                },
               );
             }));
   }
