@@ -37,7 +37,15 @@ class _MyStatefulWidgetsState extends State<MyStatefulWidgets> {
       ),
       body: Column(
         children: <Widget>[
-          Text("Body",textDirection: TextDirection.ltr,)
+          TextField(
+            decoration: InputDecoration(
+              icon: Icon(Icons.person),
+              hintText: "Username"
+            ),
+            onChanged: (input) {
+              print("onChanged Username $input");
+            },
+          )
         ],
       ),
     );
