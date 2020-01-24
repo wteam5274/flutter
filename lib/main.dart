@@ -35,6 +35,11 @@ class _MyStatefulWidgetsState extends State<MyStatefulWidgets> {
           )
         ],
       ),
+      body: Column(
+        children: <Widget>[
+          Text("Body",textDirection: TextDirection.ltr,)
+        ],
+      ),
     );
 
   }
